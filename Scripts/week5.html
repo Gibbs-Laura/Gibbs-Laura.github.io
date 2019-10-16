@@ -25,11 +25,15 @@
         </ul>
     </nav>
 
-    <h3>HTML DOM addEventListener() Method</h3>
+   
 
     <img src="/Images/week9.png" alt= " most common events " >
-    <img src="/Images/week9.png" alt= " most common events " >
-    <img src="/Images/week9.png" alt= " most common events " >
+
+    <h3>HTML DOM addEventListener() Method</h3>
+    <img src="/Images/EventSyntax.png" alt= " most common events " > 
+    <br> <br>
+
+    <img src="/Images/eventListener.png" alt= " most common events " >
 
     <p>This example uses the addEventListener() method to attach a "mouseover" and "mouseout" event to a h1 element.</p>
 
@@ -49,7 +53,11 @@ function mouseOut() {
 </script>
 
 
-<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="/Images/minnie.gif" alt="Smiley" width="300" height="300">
+
+
+
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="2" src="/Images/minnie.gif" alt="Smiley" width="300" height="300">
 
 <nav>
 <p>The function bigImg() is triggered when the user moves the mouse pointer over the image.</p>
@@ -57,8 +65,8 @@ function mouseOut() {
 </nav>
 <script>
 function bigImg(x) {
-  x.style.height = "120px";
-  x.style.width = "120px";
+  x.style.height = "300px";
+  x.style.width = "300px";
 }
 
 function normalImg(x) {
@@ -67,7 +75,20 @@ function normalImg(x) {
 }
 </script>
 
+
+
+
+
+
+
+
+
+
 <button onclick="this.innerHTML=Date()">The time is?</button>
+
+
+
+
 
 <p>This example uses the addEventListener() method to attach a "canplay" event to a video element.</p>
 
@@ -77,7 +98,7 @@ function normalImg(x) {
   Your browser does not support HTML5 video.
 </video>
 
-<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
 
 <script>
 document.getElementById("myVideo").addEventListener("canplay", myFunction);
@@ -86,6 +107,14 @@ function myFunction() {
   alert("Can start playing video");
 }
 </script>
+
+
+
+
+
+
+
+
 
     </main>
     
