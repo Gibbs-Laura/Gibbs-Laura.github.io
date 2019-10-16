@@ -1,0 +1,46 @@
+
+main {
+    background-color: lightgrey;
+
+}
+
+
+body {
+    font-size: 16px;
+    line-height: 30px;
+    font-family: Trebuchet MS, sans-serif;
+    color: black;
+}
+
+
+
+header,
+footer,
+main,
+nav {
+    margin: 1rem auto;
+    padding: .70rem 1.8rem .8rem;
+    max-width: 900px;
+    
+}
+
+header,
+footer,
+footer a {
+    text-align: center;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+nav {
+    text-align: left;
+    background-color: lightyellow;
+    color: black;
+}
+
+
+footer {
+    font-size: 0.75rem;
+}
+
+
