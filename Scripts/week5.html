@@ -45,11 +45,12 @@ function mouseOut() {
 </script>
 
 
-<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="/Images/week9.png" alt="Smiley" width="32" height="32">
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="/Images/minnie.gif" alt="Smiley" width="300" height="300">
 
+<nav>
 <p>The function bigImg() is triggered when the user moves the mouse pointer over the image.</p>
 <p>The function normalImg() is triggered when the mouse pointer is moved out of the image.</p>
-
+</nav>
 <script>
 function bigImg(x) {
   x.style.height = "64px";
@@ -59,6 +60,26 @@ function bigImg(x) {
 function normalImg(x) {
   x.style.height = "32px";
   x.style.width = "32px";
+}
+</script>
+
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+<p>This example uses the addEventListener() method to attach a "canplay" event to a video element.</p>
+
+<video controls id="myVideo">
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+<script>
+document.getElementById("myVideo").addEventListener("canplay", myFunction);
+
+function myFunction() {
+  alert("Can start playing video");
 }
 </script>
 
