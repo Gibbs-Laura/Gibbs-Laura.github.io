@@ -19,9 +19,11 @@ main,
 nav {
     margin: 1rem auto;
     padding: .70rem 1.8rem .8rem;
-    max-width: 900px;
+    max-width: 1000px;
     
 }
+
+
 
 header,
 footer,
@@ -41,3 +43,5 @@ nav {
 footer {
     font-size: 0.75rem;
 }
+
+
