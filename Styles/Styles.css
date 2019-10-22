@@ -1,5 +1,5 @@
 main {
-    background-color: lightgrey;
+  
 
 }
 
@@ -11,6 +11,48 @@ body {
     color: black;
 }
 
+nav ul {
+    padding-left: 0px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    padding: .5rem 0;
+    max-width: 1000px;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color:black;
+    font-weight: 600;
+    padding: .3rem 2rem;
+}
+
+.navigation li {
+    list-style-type: none;
+    padding-top: .3rem;
+}
+
+.navigation li a:hover { 
+    background-color: yellow; 
+}
+
+.navigation li a.active {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.navigation li ul {
+    display: none;
+}
+
 
 
 header,
@@ -19,7 +61,7 @@ main,
 nav {
     margin: 1rem auto;
     padding: .70rem 1.8rem .8rem;
-    max-width: 1000px;
+    max-width: 950px;
     
 }
 
@@ -33,11 +75,7 @@ footer a {
     color: whitesmoke;
 }
 
-nav {
-    text-align: left;
-    background-color: lightyellow;
-    color: black;
-}
+
 
 
 footer {
