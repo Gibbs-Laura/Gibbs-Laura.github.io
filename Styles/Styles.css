@@ -1,7 +1,3 @@
-main {
-  
-
-}
 
 
 body {
@@ -10,48 +6,34 @@ body {
     font-family: Trebuchet MS, sans-serif;
     color: black;
 }
-
-nav ul {
-    padding-left: 0px;
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: grey;
-    margin: 0 auto;
-    font-family: 'Raleway', sans-serif;
-    padding: .5rem 0;
-    max-width: 1000px;
-}
-
-.navigation li a {
-    text-decoration: none;
-    color:black;
-    font-weight: 600;
-    padding: .3rem 2rem;
-}
-
-.navigation li {
+  ul {
     list-style-type: none;
-    padding-top: .3rem;
-}
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+  }
+  
+  .navigation li {
+    float: left;
+  }
+  
+  .navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navigation li a:hover:not(.active) {
+    background-color: darkslategray;
+  }
+  
+  .active {
+    background-color: #333;
+  }
 
-.navigation li a:hover { 
-    background-color: yellow; 
-}
-
-.navigation li a.active {
-    color: black;
-    font-size: 1.5rem;
-}
-
-.navigation li ul {
-    display: none;
-}
 
 
 
@@ -71,7 +53,7 @@ header,
 footer,
 footer a {
     text-align: center;
-    background-color: blue;
+    background-color:lightseagreen;
     color: whitesmoke;
 }
 
