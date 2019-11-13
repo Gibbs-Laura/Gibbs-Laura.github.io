@@ -13,7 +13,7 @@
     <link href="/Styles/Styles.css" rel="stylesheet">
 
     <img src="/CIT 261/Images/JS_CSS.png" alt=" Profile Picture" width="125" height="125">
-        <h1> Mobile Application Development</h1>
+        <h1> Laura Gibbs</h1>
     </header>
 
     
@@ -30,149 +30,133 @@
             </ul>      
     </nav>
         <body>
-           
-        
-      <main>
-            <h1>Use JSON to perform an HTTP request to retrieve data from a remote location</h1>
-            <p>JSON is most commonly used in asynchronous HTTP requests. This is where an application pulls data from another application via an HTTP request on the web.</p> 
 
-            <h3>How Ajax Works</h3>
+            <main>
 
-            <img src="/CIT 261/Images/AjaxWorks.gif" alt=" AJAX WORKS" width="350" height="350">
-
-
-
-            <li><a href="https://www.quackit.com/json/tutorial/artists.txt"> JSON Data</a></li>
-
-            <li><a href="https://www.w3schools.com/js/js_ajax_http_response.asp"> The onreadystatechange Property</a></li>
-            <li><a href="https://www.w3schools.com/js/js_ajax_intro.asp"> Information about AJAX</a></li>
-
-
-            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">{
-  <span style="color: #BA2121">&quot;artists&quot;</span> <span style="color: #666666">:</span> [
-  { 
-    <span style="color: #BA2121">&quot;artistname&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Leonard Cohen&quot;</span>,
-    <span style="color: #BA2121">&quot;born&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;1934&quot;</span>
-    },
-  { 
-    <span style="color: #BA2121">&quot;artistname&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Joe Satriani&quot;</span>,
-    <span style="color: #BA2121">&quot;born&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;1956&quot;</span> 
-    },
-  { 
-    <span style="color: #BA2121">&quot;artistname&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;Snoop Dogg&quot;</span>,
-    <span style="color: #BA2121">&quot;born&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;1971&quot;</span>
-
-    }
-
-    ]
-}
-</pre></div>
-
-
-<p>Below is a sample HTML page that retrieves that JSON data via HTTP, and uses JavaScript to wrap it in HTML tags and output it to the HTML document.</p>
-
-
-<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
-    <span style="color: #408080; font-style: italic">// Store XMLHttpRequest and the JSON file location in variables</span>
-    <span style="color: #008000; font-weight: bold">var</span> xmlhttp <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> XMLHttpRequest();
-    <span style="color: #008000; font-weight: bold">var</span> url <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;https://www.quackit.com/json/tutorial/artists.txt&quot;</span>;
-    
-    <span style="color: #408080; font-style: italic">// Called whenever the readyState attribute changes </span>
-    xmlhttp.onreadystatechange <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">function</span>() {
-    
-      <span style="color: #408080; font-style: italic">// Check if fetch request is done</span>
-      <span style="color: #008000; font-weight: bold">if</span> (xmlhttp.readyState <span style="color: #666666">==</span> <span style="color: #666666">4</span> <span style="color: #666666">&amp;&amp;</span> xmlhttp.status <span style="color: #666666">==</span> <span style="color: #666666">200</span>) { 
-      
-        <span style="color: #408080; font-style: italic">// Parse the JSON string</span>
-        <span style="color: #008000; font-weight: bold">var</span> jsonData <span style="color: #666666">=</span> JSON.parse(xmlhttp.responseText);
-        
-        <span style="color: #408080; font-style: italic">// Call the showArtists(), passing in the parsed JSON string</span>
-        showArtists(jsonData);
-      }
-    };
-    
-    <span style="color: #408080; font-style: italic">// Do the HTTP call using the url variable we specified above</span>
-    xmlhttp.open(<span style="color: #BA2121">&quot;GET&quot;</span>, url, <span style="color: #008000; font-weight: bold">true</span>);
-    xmlhttp.send();
-    
-    <span style="color: #408080; font-style: italic">// Function that formats the string with HTML tags, then outputs the result</span>
-    <span style="color: #008000; font-weight: bold">function</span> showArtists(data) {
-        <span style="color: #008000; font-weight: bold">var</span> output <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&lt;ul&gt;&quot;</span>; <span style="color: #408080; font-style: italic">// Open list</span>
-        <span style="color: #008000; font-weight: bold">var</span> i;
-        
-        <span style="color: #408080; font-style: italic">// Loop through the artists, and add them as list items</span>
-        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #008000; font-weight: bold">var</span> i <span style="color: #008000; font-weight: bold">in</span> data.artists) {
-            output <span style="color: #666666">+=</span> <span style="color: #BA2121">&quot;&lt;li&gt;&quot;</span> <span style="color: #666666">+</span> data.artists[i].artistname <span style="color: #666666">+</span> <span style="color: #BA2121">&quot; (Born: &quot;</span> <span style="color: #666666">+</span> data.artists[i].born <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;)&lt;/li&gt;&quot;</span>; 
-        }
-        
-        output <span style="color: #666666">+=</span> <span style="color: #BA2121">&quot;&lt;/ul&gt;&quot;</span>; <span style="color: #408080; font-style: italic">// Close list</span>
-    
-        <span style="color: #408080; font-style: italic">// Output the data to the &quot;artistlist&quot; element</span>
-        <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;artistList&quot;</span>).innerHTML <span style="color: #666666">=</span> output;
-    }
-    <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
-    
-    <span style="color: #408080; font-style: italic">&lt;!--</span> The output appears here <span style="color: #666666">--&gt;</span>
-    <span style="color: #666666">&lt;</span>div id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;artistList&quot;</span><span style="color: #666666">&gt;&lt;</span><span style="border: 1px solid #FF0000">/div&gt;</span>
-    </pre></div>
-    
-
-    
-
-<h2>Output</h2>
-
-<ul> 
-        <li>Leonard Cohen (Born: 1934)</li>
-        <li>Joe Satriani (Born: 1956)</li>
-        <li>Snoop Dogg (Born: 1971)</li>
-    </ul>
-            <script>
-                    // Store XMLHttpRequest and the JSON file location in variables
-                    var xhr = new XMLHttpRequest();
-                    var url = "https://www.quackit.com/json/tutorial/artists.txt";
-                    
-                    // Called whenever the readyState attribute changes 
-                    xhr.onreadystatechange = function() {
-                    
-                      // Check if fetch request is done
-                      if (xhr.readyState == 4 && xhr.status == 200) { 
-                      
-                        // Parse the JSON string
-                        var jsonData = JSON.parse(xhr.responseText);
-                        
-                        // Call the showArtists(), passing in the parsed JSON string
-                        showArtists(jsonData);
-                      }
-                    };
-                    
-                    // Do the HTTP call using the url variable we specified above
-                    xhr.open("GET", url, true);
-                    xhr.send();
-                    
-                    // Function that formats the string with HTML tags, then outputs the result
+                <h3>Example #2</h3>
+                <p>This example shows the storage of an array of Contact objects.  This shows both the storage and retrieval of that array.</p>
+                <h4>Contact Input</h4>
+                    <form id="contactform">
+                    <fieldset id="contactform_input">
+                            
+                            <label for="name">Name: <input type="text" name="name" id="name"  placeholder="Full Name" pattern="[a-zA-Z -]{5,}" required></label><br>
+                            <label for="phone">Phone: <input type="text" name="phone" id="phone" placeholder="(123)555-5555"></label><br>
+                            <label for="address">Address: <input type="text" name="address" id="address"></label><br>
+                            <label for="email">Email: <input type="email" name="email" id="email"  placeholder="example@email.com" autocomplete="off" required></label><br>
+                           
+                          
+                                    <input type="button" name="button" id="action" value="Add" onClick="addContact()">
+                                      
+                    </fieldset>
                    
-                    function showArtists(data) {
-                        var output = "<ul>"; // Open list
-                        var i;
-                        
-                        // Loop through the artists, and add them as list items
-                        for (var i in data.artists) {
-                            output += "<li>" + data.artists[i].artistname + " (Born: " + data.artists[i].born + ")</li>"; 
+                    </form>
+                    <br>
+                    <h4>List</h4>
+                    <div id="contact_list_div"><table id="contact_list"></table></div>
+               
+                    <script type="text/javascript">
+                        function Contact(name, phone, address, email) {
+                            this.name = name;
+                            this.phone = phone;
+                            this.address = address;
+                            this.email = email;
+                        }
+    
+                        function addContact() {
+                            var nameElement = document.getElementById('name');
+                            var phoneElement = document.getElementById('phone');
+                            var addressElement = document.getElementById('address');
+                            var emailElement = document.getElementById('email');
+                            var name = nameElement.value;
+                            var phone = phoneElement.value;
+                            var address = addressElement.value;
+                            var email = emailElement.value;
+                            var newContact = new Contact(name, phone, address, email);
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            if(contactList === null) {
+                                contactList = Array();
+                            }
+                            contactList.push(newContact);
+                            localStorage.setItem("contactList", JSON.stringify(contactList));
+                            nameElement.value = "";
+                            phoneElement.value = "";
+                            addressElement.value = "";
+                            emailElement.value = "";
+                            updateTable();
+                        }
+                
+                        function deleteContact(index) {
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            contactList.splice(index,1);
+                            localStorage.setItem("contactList", JSON.stringify(contactList));
+                            updateTable();
                         }
                         
-                        output += "</ul>"; // Close list
+                        function updateTable() {
+                            var table = document.getElementById('contact_list');
+                    var div = document.getElementById('contact_list_div');
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            var newTable = document.createElement('table');
+                            newTable.id = 'contact_list';
+                            var newTableHead = document.createElement('thead');
+                            var newTableHeadRow = document.createElement('tr');
+                            var newTableHeadName = document.createElement('th');
+                            newTableHeadName.appendChild(document.createTextNode('Name'));
+                            var newTableHeadPhone = document.createElement('th');
+                            newTableHeadPhone.appendChild(document.createTextNode('Phone'));
+                            var newTableHeadAddress = document.createElement('th');
+                            newTableHeadAddress.appendChild(document.createTextNode('Address'));
+                            var newTableHeadEmail = document.createElement('th');
+                            newTableHeadEmail.appendChild(document.createTextNode('Email'));
+                            var newTableHeadAction = document.createElement('th');
+                            newTableHeadAction.appendChild(document.createTextNode('Action'));
+                            
+                            newTableHeadRow.appendChild(newTableHeadName);
+                            newTableHeadRow.appendChild(newTableHeadPhone);
+                            newTableHeadRow.appendChild(newTableHeadAddress);
+                            newTableHeadRow.appendChild(newTableHeadEmail);
+                            newTableHeadRow.appendChild(newTableHeadAction);
+                            
+                            newTableHead.appendChild(newTableHeadRow);
+                            var newTableBody = document.createElement('tbody');
+                            
+                            if(contactList !== null) {
+                                var count = 0;
+                                contactList.forEach(function(rowData) {
+                                    var row = document.createElement('tr');
+            
+                                    var nameCell = document.createElement('td');
+                                    nameCell.appendChild(document.createTextNode(rowData.name));
+                                    row.appendChild(nameCell);
+                                    var phoneCell = document.createElement('td');
+                                    phoneCell.appendChild(document.createTextNode(rowData.phone));
+                                    row.appendChild(phoneCell);
+                                    var addressCell = document.createElement('td');
+                                    addressCell.appendChild(document.createTextNode(rowData.address));
+                                    row.appendChild(addressCell);
+                                    var emailCell = document.createElement('td');
+                                    emailCell.appendChild(document.createTextNode(rowData.email));
+                                    row.appendChild(emailCell);
+                                    var actionCell = document.createElement('td');
+                                    actionCell.innerHTML = "<input type=\"button\" name=\"button\" value=\"Delete\" onClick=\"deleteContact(" + count + ")\">";
+                                    row.appendChild(actionCell);
+                                    newTableBody.appendChild(row);
+                                    count++;
+                                });
+                            }
                     
-                        // Output the data to the "artistlist" element
-                        document.getElementById("artistList").innerHTML = output;
-
-                       
-                    }
+                            newTable.appendChild(newTableHead);
+                            newTable.appendChild(newTableBody);
+                            div.replaceChild(newTable, table);
+                        }
+                
+                        updateTable();
                     </script>
-                    
-                    <!-- The output appears here -->
-                    <div id="artistList"></div>
-                   
-                   
+                </section>
+
+
+        
+     
 
     
 </main>
