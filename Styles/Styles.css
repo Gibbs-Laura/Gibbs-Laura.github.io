@@ -6,13 +6,7 @@ body {
     font-family: Trebuchet MS, sans-serif;
     color: black;
 }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: gray;
-  }
+  
   
   .navigation li {
     float: left;

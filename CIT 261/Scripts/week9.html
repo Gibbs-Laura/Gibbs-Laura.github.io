@@ -18,145 +18,144 @@
 
     
 
-    <nav>
-            <ul class="navigation">
-                <li class="menu1"><a href="/index.html">Home</a></li>
-                <li class="active"><a href="/CIT 261/Scripts/index.html">Mobile Application Development</a>   
-                <li class="menu3"><a href="/Scripts/resume.html">Resume</a> 
-                <li class="menu4"><a href="/Scripts/courses.html">Courses</a> 
-                <li class="menu5"><a href="/Scripts/Gallery.html">Gallery</a>     
-                <li class="menu6"><a href="/Scripts/contact.html">Contact</a>     
-                             
-            </ul>      
-    </nav>
-        <body>
-
-            <main>
-
-                <h3>Example #2</h3>
-                <p>This example shows the storage of an array of Contact objects.  This shows both the storage and retrieval of that array.</p>
-                <h4>Contact Input</h4>
-                    <form id="contactform">
-                    <fieldset id="contactform_input">
-                            
-                            <label for="name">Name: <input type="text" name="name" id="name"  placeholder="Full Name" pattern="[a-zA-Z -]{5,}" required></label><br>
-                            <label for="phone">Phone: <input type="text" name="phone" id="phone" placeholder="(123)555-5555"></label><br>
-                            <label for="address">Address: <input type="text" name="address" id="address"></label><br>
-                            <label for="email">Email: <input type="email" name="email" id="email"  placeholder="example@email.com" autocomplete="off" required></label><br>
-                           
-                          
-                                    <input type="button" name="button" id="action" value="Add" onClick="addContact()">
-                                      
-                    </fieldset>
-                   
-                    </form>
-                    <br>
-                    <h4>List</h4>
-                    <div id="contact_list_div"><table id="contact_list"></table></div>
-               
-                    <script type="text/javascript">
-                        function Contact(name, phone, address, email) {
-                            this.name = name;
-                            this.phone = phone;
-                            this.address = address;
-                            this.email = email;
-                        }
     
-                        function addContact() {
-                            var nameElement = document.getElementById('name');
-                            var phoneElement = document.getElementById('phone');
-                            var addressElement = document.getElementById('address');
-                            var emailElement = document.getElementById('email');
-                            var name = nameElement.value;
-                            var phone = phoneElement.value;
-                            var address = addressElement.value;
-                            var email = emailElement.value;
-                            var newContact = new Contact(name, phone, address, email);
-                            var contactList = JSON.parse(localStorage.getItem("contactList"));
-                            if(contactList === null) {
-                                contactList = Array();
-                            }
-                            contactList.push(newContact);
-                            localStorage.setItem("contactList", JSON.stringify(contactList));
-                            nameElement.value = "";
-                            phoneElement.value = "";
-                            addressElement.value = "";
-                            emailElement.value = "";
-                            updateTable();
-                        }
+        <body>
                 
-                        function deleteContact(index) {
-                            var contactList = JSON.parse(localStorage.getItem("contactList"));
-                            contactList.splice(index,1);
-                            localStorage.setItem("contactList", JSON.stringify(contactList));
-                            updateTable();
-                        }
-                        
-                        function updateTable() {
-                            var table = document.getElementById('contact_list');
-                    var div = document.getElementById('contact_list_div');
-                            var contactList = JSON.parse(localStorage.getItem("contactList"));
-                            var newTable = document.createElement('table');
-                            newTable.id = 'contact_list';
-                            var newTableHead = document.createElement('thead');
-                            var newTableHeadRow = document.createElement('tr');
-                            var newTableHeadName = document.createElement('th');
-                            newTableHeadName.appendChild(document.createTextNode('Name'));
-                            var newTableHeadPhone = document.createElement('th');
-                            newTableHeadPhone.appendChild(document.createTextNode('Phone'));
-                            var newTableHeadAddress = document.createElement('th');
-                            newTableHeadAddress.appendChild(document.createTextNode('Address'));
-                            var newTableHeadEmail = document.createElement('th');
-                            newTableHeadEmail.appendChild(document.createTextNode('Email'));
-                            var newTableHeadAction = document.createElement('th');
-                            newTableHeadAction.appendChild(document.createTextNode('Action'));
-                            
-                            newTableHeadRow.appendChild(newTableHeadName);
-                            newTableHeadRow.appendChild(newTableHeadPhone);
-                            newTableHeadRow.appendChild(newTableHeadAddress);
-                            newTableHeadRow.appendChild(newTableHeadEmail);
-                            newTableHeadRow.appendChild(newTableHeadAction);
-                            
-                            newTableHead.appendChild(newTableHeadRow);
-                            var newTableBody = document.createElement('tbody');
-                            
-                            if(contactList !== null) {
-                                var count = 0;
-                                contactList.forEach(function(rowData) {
-                                    var row = document.createElement('tr');
+        
+      <main>
+
             
-                                    var nameCell = document.createElement('td');
-                                    nameCell.appendChild(document.createTextNode(rowData.name));
-                                    row.appendChild(nameCell);
-                                    var phoneCell = document.createElement('td');
-                                    phoneCell.appendChild(document.createTextNode(rowData.phone));
-                                    row.appendChild(phoneCell);
-                                    var addressCell = document.createElement('td');
-                                    addressCell.appendChild(document.createTextNode(rowData.address));
-                                    row.appendChild(addressCell);
-                                    var emailCell = document.createElement('td');
-                                    emailCell.appendChild(document.createTextNode(rowData.email));
-                                    row.appendChild(emailCell);
-                                    var actionCell = document.createElement('td');
-                                    actionCell.innerHTML = "<input type=\"button\" name=\"button\" value=\"Delete\" onClick=\"deleteContact(" + count + ")\">";
-                                    row.appendChild(actionCell);
-                                    newTableBody.appendChild(row);
-                                    count++;
-                                });
-                            }
-                    
-                            newTable.appendChild(newTableHead);
-                            newTable.appendChild(newTableBody);
-                            div.replaceChild(newTable, table);
-                        }
-                
-                        updateTable();
-                    </script>
-                </section>
+            
+
+            <object width="600" height="600"  data="/CIT 261/Presentations/CIT 261 Week 9.pdf" type="application/pdf">
+                Your browser does not support pdfs, <a href="/CIT 261/Presentations/CIT 261 Week 9.pdf">click here to
+                download the file.</a>
+              </object>
+              <br> <br> <br> <br>
+
+              <h1>Replace the first item in the the list.</h1>
+
+
+              <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>ul id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myList&quot;</span><span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>li<span style="color: #666666">&gt;</span>CIT <span style="color: #666666">261&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span>li<span style="color: #666666">&gt;</span>CS <span style="color: #666666">308&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span>li<span style="color: #666666">&gt;</span>CS <span style="color: #666666">246&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span>li<span style="color: #666666">&gt;</span>CIT <span style="color: #666666">270&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span>li<span style="color: #666666">&gt;</span>ECEN <span style="color: #666666">160&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/ul&gt;</span>
+
+<span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myFunction()&quot;</span><span style="color: #666666">&gt;</span>Replace<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
+
+
+<span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
+<span style="color: #008000; font-weight: bold">function</span> myFunction() {
+ 
+  <span style="color: #008000; font-weight: bold">var</span> elmnt <span style="color: #666666">=</span> <span style="color: #008000">document</span>.createElement(<span style="color: #BA2121">&quot;li&quot;</span>);
+  <span style="color: #008000; font-weight: bold">var</span> textnode <span style="color: #666666">=</span> <span style="color: #008000">document</span>.createTextNode(<span style="color: #BA2121">&quot;Mobile Application Development&quot;</span>);
+  elmnt.appendChild(textnode);
+
+  <span style="color: #008000; font-weight: bold">var</span> item <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;myList&quot;</span>);
+  item.replaceChild(elmnt, item.childNodes[<span style="color: #666666">0</span>]);
+}
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+</pre></div>
+
+
 
 
         
-     
+
+            <p>1. First create a new li element and a Text node called "Mobile Application Development".
+            <br>2. Then we append the text node to li.
+            <br>3. Then we replace the first child node of the ul element, with the newly created li element.</p>
+
+            <h2>List of Items</h2>
+            
+            <ul id="myList"><li>CIT 261</li><li>CS 308</li><li>CS 246</li></ul>
+
+<p>Click the button to replace the first item in the the list.</p>
+
+<button onclick="myFunction()">Replace</button>
+
+
+<script>
+function myFunction() {
+  var elmnt = document.createElement("li");
+  var textnode = document.createTextNode("Mobile Application Development");
+  elmnt.appendChild(textnode);
+
+  var item = document.getElementById("myList");
+  item.replaceChild(elmnt, item.childNodes[0]);
+}
+</script>
+
+
+                    <h2>Remove and Insert elements</h2>
+
+                    <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>ul id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myList&quot;</span><span style="color: #666666">&gt;</span>
+  <span style="color: #666666">&lt;</span>li id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myLI&quot;</span><span style="color: #666666">&gt;</span>CIT <span style="color: #666666">261&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+  <span style="color: #666666">&lt;</span>li id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myLI&quot;</span><span style="color: #666666">&gt;</span>CS <span style="color: #666666">308&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+  <span style="color: #666666">&lt;</span>li id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myLI&quot;</span><span style="color: #666666">&gt;</span>ECEN <span style="color: #666666">160&lt;</span><span style="border: 1px solid #FF0000">/li&gt;</span>
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/ul&gt;</span>
+
+<span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;removeLi()&quot;</span><span style="color: #666666">&gt;</span>Remove li<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
+<span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;appendLi()&quot;</span><span style="color: #666666">&gt;</span>Insert li<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
+
+<span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
+<span style="color: #008000; font-weight: bold">var</span> item <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;myLI&quot;</span>);
+
+<span style="color: #008000; font-weight: bold">function</span> removeLi() {
+  item.parentNode.removeChild(item);
+}
+
+<span style="color: #008000; font-weight: bold">function</span> appendLi() {
+  <span style="color: #008000; font-weight: bold">var</span> list <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;myList&quot;</span>);
+  list.appendChild(item);
+}
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+</pre></div>
+<br> <br>
+
+
+</script>
+
+
+
+<ul id="myList1">
+
+    <h3>List of Items</h3>
+    
+        <li id="myLI">CIT 261</li>
+        <li id="myLI">CS 308</li>
+        <li id="myLI">CIT 270</li>
+      </ul>
+      
+      <p>Click one button to remove the li element from ul. Click the other button to insert the removed li element to ul.</p>
+      
+      <button onclick="removeLi()">Remove li</button>
+      <button onclick="appendLi()">Insert li</button>
+      
+      <script>
+      var item = document.getElementById("myLI");
+      
+      function removeLi() {
+        item.parentNode.removeChild(item);
+      }
+      
+      function appendLi() {
+        var list = document.getElementById("myList1");
+        list.appendChild(item);
+      }
+      </script>
+      
+
+
+      
+      </body>
+      </html>
+      
+
+            
 
     
 </main>
