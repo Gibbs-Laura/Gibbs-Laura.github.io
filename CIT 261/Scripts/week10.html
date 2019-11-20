@@ -40,6 +40,80 @@
                 download the file.</a>
               </object>
 
+              <h2>JavaScript Array Methods</h2>
+
+              <p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myFunction()&quot;</span><span style="color: #666666">&gt;</span>Try it<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
+
+    <span style="color: #666666">&lt;</span>p id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;demo&quot;</span><span style="color: #666666">&gt;&lt;</span><span style="border: 1px solid #FF0000">/p&gt;</span>
+
+    <span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
+    <span style="color: #008000; font-weight: bold">var</span> fruits <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;Banana&quot;</span>, <span style="color: #BA2121">&quot;Orange&quot;</span>, <span style="color: #BA2121">&quot;Apple&quot;</span>, <span style="color: #BA2121">&quot;Mango&quot;</span>];
+    <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;demo&quot;</span>).innerHTML <span style="color: #666666">=</span> fruits;
+    
+    <span style="color: #008000; font-weight: bold">function</span> myFunction() {
+      fruits[fruits.length] <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Kiwi&quot;</span>;
+      <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;demo&quot;</span>).innerHTML <span style="color: #666666">=</span> fruits;
+    }
+    <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+    </pre></div>
+    
+    <br>
+    <br>
+
+    <button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits[fruits.length] = "Kiwi";
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+
+<h2>JavaScript Array Methods</h2>
+
+<h2>splice()</h2>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myFunction()&quot;</span><span style="color: #666666">&gt;</span>Try it<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
+
+    <span style="color: #666666">&lt;</span>p id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;demo1&quot;</span><span style="color: #666666">&gt;&lt;</span><span style="border: 1px solid #FF0000">/p&gt;</span>
+    <span style="color: #666666">&lt;</span>p id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;demo2&quot;</span><span style="color: #666666">&gt;&lt;</span><span style="border: 1px solid #FF0000">/p&gt;</span>
+    
+    <span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
+    <span style="color: #008000; font-weight: bold">var</span> fruits <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;Banana&quot;</span>, <span style="color: #BA2121">&quot;Orange&quot;</span>, <span style="color: #BA2121">&quot;Apple&quot;</span>, <span style="color: #BA2121">&quot;Mango&quot;</span>];
+    <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;demo1&quot;</span>).innerHTML <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Original Array:&lt;br&gt;&quot;</span> <span style="color: #666666">+</span> fruits;
+    <span style="color: #008000; font-weight: bold">function</span> myFunction() {
+      fruits.splice(<span style="color: #666666">2</span>, <span style="color: #666666">0</span>, <span style="color: #BA2121">&quot;Lemon&quot;</span>, <span style="color: #BA2121">&quot;Kiwi&quot;</span>);
+      <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;demo2&quot;</span>).innerHTML <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;New Array:&lt;br&gt;&quot;</span> <span style="color: #666666">+</span> fruits;
+    }
+    <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+    </pre></div>
+
+
+    <button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br>" + fruits;
+function myFunction() {
+  fruits.splice(2, 0, "Lemon", "Kiwi");
+  document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+}
+</script>
+    
+
+
 
            
 
