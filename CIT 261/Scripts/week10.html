@@ -59,22 +59,22 @@
     <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
     </pre></div>
     
-    <br>
-    <br>
 
-    <button onclick="myFunction()">Try it</button>
 
-<p id="demo"></p>
+   
+<p id="demo3"></p>
 
 <script>
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits;
+document.getElementById("demo3").innerHTML = fruits;
 
 function myFunction() {
   fruits[fruits.length] = "Kiwi";
-  document.getElementById("demo").innerHTML = fruits;
+  document.getElementById("demo3").innerHTML = fruits;
 }
 </script>
+
+<button onclick="myFunction()">Try it</button>
 
 
 <h2>JavaScript Array Methods</h2>
@@ -98,19 +98,23 @@ function myFunction() {
     </pre></div>
 
 
-    <button onclick="myFunction()">Try it</button>
+    
 
 <p id="demo1"></p>
 <p id="demo2"></p>
 
 <script>
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo1").innerHTML = "Original Array:<br>" + fruits;
-function myFunction() {
+document.getElementById("demo1").innerHTML = "<b>Original Array:</b><br>" + fruits;
+
+
+function myFunction1() {
   fruits.splice(2, 0, "Lemon", "Kiwi");
-  document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+  document.getElementById("demo2").innerHTML = "<b>New Array:</b><br>" + fruits;
 }
 </script>
+
+<button onclick="myFunction1()">Try it</button>
     
 
 
