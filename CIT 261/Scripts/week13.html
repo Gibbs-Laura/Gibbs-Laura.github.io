@@ -36,88 +36,15 @@
                           </object>
 
 
-                          <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>div style<span style="color: #666666">=</span><span style="color: #BA2121">&quot;text-align:center&quot;</span><span style="color: #666666">&gt;</span> 
-  <span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;playPause()&quot;</span><span style="color: #666666">&gt;</span>Play<span style="color: #666666">/</span>Pause<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt; </span>
-  <span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;makeBig()&quot;</span><span style="color: #666666">&gt;</span>Big<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
-  <span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;makeSmall()&quot;</span><span style="color: #666666">&gt;</span>Small<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
-  <span style="color: #666666">&lt;</span>button onclick<span style="color: #666666">=</span><span style="color: #BA2121">&quot;makeNormal()&quot;</span><span style="color: #666666">&gt;</span>Normal<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/button&gt;</span>
-  <span style="color: #666666">&lt;</span>br<span style="color: #666666">&gt;&lt;</span>br<span style="color: #666666">&gt;</span>
-  <span style="color: #666666">&lt;</span>video id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;video1&quot;</span> width<span style="color: #666666">=</span><span style="color: #BA2121">&quot;420&quot;</span><span style="color: #666666">&gt;</span>
-    <span style="color: #666666">&lt;</span>source src<span style="color: #666666">=</span><span style="color: #BA2121">&quot;mov_bbb.mp4&quot;</span> type<span style="color: #666666">=</span><span style="color: #BA2121">&quot;video/mp4&quot;</span><span style="color: #666666">&gt;</span>
-    <span style="color: #666666">&lt;</span>source src<span style="color: #666666">=</span><span style="color: #BA2121">&quot;mov_bbb.ogg&quot;</span> type<span style="color: #666666">=</span><span style="color: #BA2121">&quot;video/ogg&quot;</span><span style="color: #666666">&gt;</span>
-    Your browser does not support HTML5 video.
-  <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/video&gt;</span>
-<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/div&gt; </span>
 
-<span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span> 
-<span style="color: #008000; font-weight: bold">var</span> myVideo <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;video1&quot;</span>); 
-
-<span style="color: #008000; font-weight: bold">function</span> playPause() { 
-  <span style="color: #008000; font-weight: bold">if</span> (myVideo.paused) 
-    myVideo.play(); 
-  <span style="color: #008000; font-weight: bold">else</span> 
-    myVideo.pause(); 
-} 
-
-<span style="color: #008000; font-weight: bold">function</span> makeBig() { 
-    myVideo.width <span style="color: #666666">=</span> <span style="color: #666666">560</span>; 
-} 
-
-<span style="color: #008000; font-weight: bold">function</span> makeSmall() { 
-    myVideo.width <span style="color: #666666">=</span> <span style="color: #666666">320</span>; 
-} 
-
-<span style="color: #008000; font-weight: bold">function</span> makeNormal() { 
-    myVideo.width <span style="color: #666666">=</span> <span style="color: #666666">420</span>; 
-} 
-<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt; </span>
-
-<span style="color: #666666">&lt;</span>p<span style="color: #666666">&gt;</span>Video courtesy of <span style="color: #666666">&lt;</span>a href<span style="color: #666666">=</span><span style="color: #BA2121">&quot;https://www.bigbuckbunny.org/&quot;</span> target<span style="color: #666666">=</span><span style="color: #BA2121">&quot;_blank&quot;</span><span style="color: #666666">&gt;</span>Big Buck Bunny<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/a&gt;.&lt;/p&gt;</span>
-</pre></div>
+                          <video width="320" height="240" controls>
+                                <source src="movie.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                              </video>
 
 
-
-
-                          <div style="text-align:center"> 
-                                <button onclick="playPause()">Play/Pause</button> 
-                                <button onclick="makeBig()">Big</button>
-                                <button onclick="makeSmall()">Small</button>
-                                <button onclick="makeNormal()">Normal</button>
-                                <br><br>
-                                <video id="video1" width="420">
-                                  <source src="mov_bbb.mp4" type="video/mp4">
-                                  <source src="mov_bbb.ogg" type="video/ogg">
-                                  Your browser does not support HTML5 video.
-                                </video>
-                              </div> 
-                              
-                              <script> 
-                              var myVideo = document.getElementById("video1"); 
-                              
-                              function playPause() { 
-                                if (myVideo.paused) 
-                                  myVideo.play(); 
-                                else 
-                                  myVideo.pause(); 
-                              } 
-                              
-                              function makeBig() { 
-                                  myVideo.width = 560; 
-                              } 
-                              
-                              function makeSmall() { 
-                                  myVideo.width = 320; 
-                              } 
-                              
-                              function makeNormal() { 
-                                  myVideo.width = 420; 
-                              } 
-                              </script> 
-                              
-                              <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
-
-
-
+                        
 
 
 
