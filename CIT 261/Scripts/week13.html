@@ -36,12 +36,52 @@
                           </object>
 
 
+<h1>Example #1</h1>
 
-                          <video width="320" height="240" controls>
-                                <source src="movie.mp4" type="video/mp4">
-                                <source src="movie.ogg" type="video/ogg">
-                                Your browser does not support the video tag.
-                              </video>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>video id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;video1&quot;</span> controls width<span style="color: #666666">=</span><span style="color: #BA2121">&quot;270&quot;</span> autoplay<span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;</span>source src<span style="color: #666666">=</span><span style="color: #BA2121">&quot;/CIT 261/Images/big_buck_bunny.mp4&quot;</span> type<span style="color: #666666">=</span><span style="color: #BA2121">&#39;video/mp4&#39;</span><span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;</span>source src<span style="color: #666666">=</span><span style="color: #BA2121">&quot;/CIT 261/Images/big_buck_bunny.mp4&quot;</span> type<span style="color: #666666">=</span><span style="color: #BA2121">&#39;video/ogg&#39;</span><span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;</span>source src<span style="color: #666666">=</span><span style="color: #BA2121">&quot;/CIT 261/Images/big_buck_bunny.mp4&quot;</span> type<span style="color: #666666">=</span><span style="color: #BA2121">&#39;video/webm&#39;</span><span style="color: #666666">&gt;</span>
+  <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/video&gt;</span>
+  
+  <span style="color: #666666">&lt;</span>p<span style="color: #666666">&gt;</span>Canvas (the code draws the current frame of the video every <span style="color: #666666">20</span> millisecond)<span style="color: #666666">:&lt;</span><span style="border: 1px solid #FF0000">/p&gt;</span>
+  <span style="color: #666666">&lt;</span>canvas id<span style="color: #666666">=</span><span style="color: #BA2121">&quot;myCanvas&quot;</span> width<span style="color: #666666">=</span><span style="color: #BA2121">&quot;270&quot;</span> height<span style="color: #666666">=</span><span style="color: #BA2121">&quot;135&quot;</span> style<span style="color: #666666">=</span><span style="color: #BA2121">&quot;border:1px solid #d3d3d3;&quot;</span><span style="color: #666666">&gt;</span>
+  Your browser does not support the HTML5 canvas tag.<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/canvas&gt;</span>
+  
+  <span style="color: #666666">&lt;</span>script<span style="color: #666666">&gt;</span>
+  <span style="color: #008000; font-weight: bold">var</span> v <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;video1&quot;</span>);
+  <span style="color: #008000; font-weight: bold">var</span> c <span style="color: #666666">=</span> <span style="color: #008000">document</span>.getElementById(<span style="color: #BA2121">&quot;myCanvas&quot;</span>);
+  <span style="color: #008000; font-weight: bold">var</span> ctx <span style="color: #666666">=</span> c.getContext(<span style="color: #BA2121">&quot;2d&quot;</span>);
+  <span style="color: #008000; font-weight: bold">var</span> i;
+  
+  v.addEventListener(<span style="color: #BA2121">&quot;play&quot;</span>, <span style="color: #008000; font-weight: bold">function</span>() {i <span style="color: #666666">=</span> <span style="color: #008000">window</span>.setInterval(<span style="color: #008000; font-weight: bold">function</span>() {ctx.drawImage(v,<span style="color: #666666">5</span>,<span style="color: #666666">5</span>,<span style="color: #666666">260</span>,<span style="color: #666666">125</span>)},<span style="color: #666666">20</span>);}, <span style="color: #008000; font-weight: bold">false</span>);
+  v.addEventListener(<span style="color: #BA2121">&quot;pause&quot;</span>, <span style="color: #008000; font-weight: bold">function</span>() {<span style="color: #008000">window</span>.clearInterval(i);}, <span style="color: #008000; font-weight: bold">false</span>);
+  v.addEventListener(<span style="color: #BA2121">&quot;ended&quot;</span>, <span style="color: #008000; font-weight: bold">function</span>() {clearInterval(i);}, <span style="color: #008000; font-weight: bold">false</span>); 
+  <span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+  </pre></div>
+  
+                          <p>Video to use:</p>
+<video id="video1" controls width="270" autoplay>
+  <source src="/CIT 261/Images/big_buck_bunny.mp4" type='video/mp4'>
+  <source src="/CIT 261/Images/big_buck_bunny.mp4" type='video/ogg'>
+  <source src="/CIT 261/Images/big_buck_bunny.mp4" type='video/webm'>
+</video>
+
+<p>Canvas (the code draws the current frame of the video every 20 millisecond):</p>
+<canvas id="myCanvas" width="270" height="135" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var v = document.getElementById("video1");
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var i;
+
+v.addEventListener("play", function() {i = window.setInterval(function() {ctx.drawImage(v,5,5,260,125)},20);}, false);
+v.addEventListener("pause", function() {window.clearInterval(i);}, false);
+v.addEventListener("ended", function() {clearInterval(i);}, false); 
+</script>
 
 
                         
