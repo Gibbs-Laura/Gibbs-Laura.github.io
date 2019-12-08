@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+    <header>
+        <!-- Custom style for this site -->
+    <link href="/CIT 261/Styles/finalProject.css" rel="stylesheet">
+
+    <img src="/CIT 261/Images/JS_CSS.png" alt=" Profile Picture" width="125" height="125">
+        <h1> CIT 261 Mobile Application Development</h1>
+    </header>
+
+    
+
+    <nav>
+            <ul class="navigation">
+                <li class="menu1"><a href="/index.html">Home</a></li>
+                <li class="active"><a href="/CIT 261/Scripts/index.html">Mobile Application Development</a>   
+                <li class="menu3"><a href="/Scripts/resume.html">Resume</a> 
+                <li class="menu4"><a href="/Scripts/courses.html">Courses</a> 
+                <li class="menu5"><a href="/Scripts/Gallery.html">Gallery</a>     
+                <li class="menu6"><a href="/Scripts/contact.html">Contact</a>     
+                             
+            </ul>      
+    </nav>
+        <body>
+
+            <main>
+                    
+
+                <h3>FINAL PROJECT</h3>
+                
+                <h4>Contact Input</h4>
+                    <form id="contactform">
+                    <fieldset id="contactform_input">
+                            
+                            <label for="name">Name: <input type="text" name="name" id="name"  placeholder="Full Name" pattern="[a-zA-Z -]{5,}" required></label><br>
+                            <label for="phone">Phone: <input type="text" name="phone" id="phone" placeholder="(123)555-5555"></label><br>
+                            <label for="address">Address: <input type="text" name="address" id="address"></label><br>
+                            <label for="email">Email: <input type="email" name="email" id="email"  placeholder="example@email.com" autocomplete="off" required></label><br>
+                           
+                          
+                                    <input type="button" name="button" id="action" value="Add" onClick="addContact()">
+                                      
+                    </fieldset>
+                   
+                    </form>
+                    <br>
+                    <h4>List</h4>
+                    <div id="contact_list_div"><table id="contact_list"></table></div>
+               
+                    <script type="text/javascript">
+                        function Contact(name, phone, address, email) {
+                            this.name = name;
+                            this.phone = phone;
+                            this.address = address;
+                            this.email = email;
+                        }
+    
+                        function addContact() {
+                            var nameElement = document.getElementById('name');
+                            var phoneElement = document.getElementById('phone');
+                            var addressElement = document.getElementById('address');
+                            var emailElement = document.getElementById('email');
+                            var name = nameElement.value;
+                            var phone = phoneElement.value;
+                            var address = addressElement.value;
+                            var email = emailElement.value;
+                            var newContact = new Contact(name, phone, address, email);
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            if(contactList === null) {
+                                contactList = Array();
+                            }
+                            contactList.push(newContact);
+                            localStorage.setItem("contactList", JSON.stringify(contactList));
+                            nameElement.value = "";
+                            phoneElement.value = "";
+                            addressElement.value = "";
+                            emailElement.value = "";
+                            updateTable();
+                        }
+                
+                        function deleteContact(index) {
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            contactList.splice(index,1);
+                            localStorage.setItem("contactList", JSON.stringify(contactList));
+                            updateTable();
+                        }
+                        
+                        function updateTable() {
+                            var table = document.getElementById('contact_list');
+                    var div = document.getElementById('contact_list_div');
+                            var contactList = JSON.parse(localStorage.getItem("contactList"));
+                            var newTable = document.createElement('table');
+                            newTable.id = 'contact_list';
+                            var newTableHead = document.createElement('thead');
+                            var newTableHeadRow = document.createElement('tr');
+                            var newTableHeadName = document.createElement('th');
+                            newTableHeadName.appendChild(document.createTextNode('Name'));
+                            var newTableHeadPhone = document.createElement('th');
+                            newTableHeadPhone.appendChild(document.createTextNode('Phone'));
+                            var newTableHeadAddress = document.createElement('th');
+                            newTableHeadAddress.appendChild(document.createTextNode('Address'));
+                            var newTableHeadEmail = document.createElement('th');
+                            newTableHeadEmail.appendChild(document.createTextNode('Email'));
+                            var newTableHeadAction = document.createElement('th');
+                            newTableHeadAction.appendChild(document.createTextNode('Action'));
+                            
+                            newTableHeadRow.appendChild(newTableHeadName);
+                            newTableHeadRow.appendChild(newTableHeadPhone);
+                            newTableHeadRow.appendChild(newTableHeadAddress);
+                            newTableHeadRow.appendChild(newTableHeadEmail);
+                            newTableHeadRow.appendChild(newTableHeadAction);
+                            
+                            newTableHead.appendChild(newTableHeadRow);
+                            var newTableBody = document.createElement('tbody');
+                            
+                            if(contactList !== null) {
+                                var count = 0;
+                                contactList.forEach(function(rowData) {
+                                    var row = document.createElement('tr');
+            
+                                    var nameCell = document.createElement('td');
+                                    nameCell.appendChild(document.createTextNode(rowData.name));
+                                    row.appendChild(nameCell);
+                                    var phoneCell = document.createElement('td');
+                                    phoneCell.appendChild(document.createTextNode(rowData.phone));
+                                    row.appendChild(phoneCell);
+                                    var addressCell = document.createElement('td');
+                                    addressCell.appendChild(document.createTextNode(rowData.address));
+                                    row.appendChild(addressCell);
+                                    var emailCell = document.createElement('td');
+                                    emailCell.appendChild(document.createTextNode(rowData.email));
+                                    row.appendChild(emailCell);
+                                    var actionCell = document.createElement('td');
+                                    actionCell.innerHTML = "<input type=\"button\" name=\"button\" value=\"Delete\" onClick=\"deleteContact(" + count + ")\">";
+                                    row.appendChild(actionCell);
+                                    newTableBody.appendChild(row);
+                                    count++;
+                                });
+                            }
+                    
+                            newTable.appendChild(newTableHead);
+                            newTable.appendChild(newTableBody);
+                            div.replaceChild(newTable, table);
+                        }
+                
+                        updateTable();
+                    </script>
+                </section>
+
+
+        
+     
+
+    
+</main>
+
+    <footer>  © 2019 ★ <strong>CIT 261 Brigham Young University - Idaho </strong>★ Built by Laura Gibbs</p></footer>
+
+</body>
+</html>
