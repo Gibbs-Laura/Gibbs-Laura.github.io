@@ -57,34 +57,14 @@ footer a {
     color: whitesmoke;
 }
 
-table {
-    width:100%;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  table#t01 tr:nth-child(even) {
-    background-color: #eee;
-  }
-  table#t01 tr:nth-child(odd) {
-   background-color: #fff;
-  }
-  table#t01 th {
-    background-color: black;
-    color: white;
-  }
+
 
   .images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.rcorners3 {
+.contactform_input {
   border-radius: 25px;
   background: pink;
   background-position: left top;
@@ -132,6 +112,19 @@ table {
     border-radius: 4px;
     cursor: pointer;
   }
+  
+  form {
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 93%;
+}
+
+fieldset {
+    border-radius: .5em;
+}
+
+ 
 
 
 
