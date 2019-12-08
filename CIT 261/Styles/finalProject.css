@@ -95,6 +95,43 @@ table {
   
 }
 
+#contact_list {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #contact_list td, #contact_list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #contact_list tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #contact_list tr:hover {background-color: #ddd;}
+  
+  #contact_list  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: blue;
+    color: white;
+  }
+
+  input[type=button]:hover {
+    background-color: yellowgreen;
+  }
+
+  input[type=button] {
+   
+    background-color:gray;
+    color: white;
+    padding: 7px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
 
 
