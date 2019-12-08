@@ -5,7 +5,10 @@
 /* Main CSS */
 
 
-
+@media screen and (max-width: 600px) {
+    ul.navigation li.right, 
+    ul.navigation li {float: none;}
+  }
 
 header {background-color: green; padding: .5rem 0  .5rem 2%;}
 
