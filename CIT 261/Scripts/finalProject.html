@@ -35,7 +35,6 @@
                     
 
                 <h1>FINAL PROJECT</h1>
-                
                 <h2><bold>Student Information</bold></h2>
                     <form id="contactform">
                     <fieldset id="contactform_input">
@@ -44,9 +43,16 @@
                             <label for="phone">Phone: <input type="text" name="phone" id="phone" placeholder="(123)555-5555"></label><br>
                             <label for="address">Address: <input type="text" name="address" id="address"></label><br>
                             <label for="email">Email: <input type="email" name="email" id="email"  placeholder="example@email.com" autocomplete="off" required></label><br>
-                           
+                            <label for="Academic standings">Academic standings: </label>
+                            <select id="Academic standings" name="Academic standings">
+                                <option value="freshman">Freshman</option>
+                                <option value="sophomore ">Sophomore</option>
+                                <option value="junior">Junior</option>
+                                <option value="senior">Senior</option>
+                              </select><br>
+                            
                           
-                                    <input type="button" name="button" id="action" value="Add" onClick="addContact()">
+                            <input type="button" name="button" id="action" value="Add" onClick="addContact()">
                                       
                     </fieldset>
                    
